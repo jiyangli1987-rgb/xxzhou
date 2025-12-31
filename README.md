@@ -53,9 +53,11 @@ C:\Users\lenovo>xxzhou
 示例1：xxzhou 下载视频，http……
 示例2：xxzhou 图片1.png的内容是什么？
 示例3：xxzhou 给1.png中的人物戴上一顶草帽。
+示例4：xxzhou 分析这个PDF文件：document.pdf
+示例5：xxzhou PDF文件report.pdf中都有哪些章节？
 ```
 
-然后安装实例的交互方式，就实现可以【下载视频】【生成图片】【识别图片】的功能了。
+然后安装实例的交互方式，就实现可以【下载视频】【生成图片】【识别图片】【读取PDF文件】的功能了。
 
 ### 使用pyinstaller打包
 
@@ -64,7 +66,36 @@ pip install pyinstaller
 pyinstaller -F -n xxzhou --exclude-data .env:.env main.py
 ```
 
-## 二、股东群
+## 二、功能特性
+
+### PDF文档识别
+
+项目新增了PDF文档智能识别功能，支持：
+
+- **文本提取**：自动提取PDF中的文字内容
+- **图片识别**：识别PDF中的图片内容（使用Qwen视觉模型）
+- **多页处理**：支持多页PDF文档，最多处理50页
+- **智能分析**：根据用户的问题智能分析PDF内容
+
+#### 使用方法
+
+```bash
+# 基本分析PDF内容
+xxzhou 分析这个PDF文件：document.pdf
+
+# 询问PDF中的特定信息
+xxzhou PDF文件report.pdf中都有哪些章节？
+xxzhou 提取invoice.pdf中的表格数据
+xxzhou 总结research_paper.pdf的主要观点
+```
+
+#### 技术实现
+
+- 使用PyMuPDF提取PDF文本和图片
+- 结合Qwen视觉模型进行智能分析
+- 支持中英文混合内容识别
+
+## 三、股东群
 
 对智能体开发感兴趣的小伙伴，欢迎加入晓舟的会员股东群，一起学习智能体开发。
 

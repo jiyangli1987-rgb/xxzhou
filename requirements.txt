@@ -1,0 +1,5 @@
+agentscope
+python-dotenv
+PyMuPDF
+pillow
+opencv-python
