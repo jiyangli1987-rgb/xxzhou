@@ -21,6 +21,8 @@ def create_images(prompt:str,images:list,save_dir:str):
     :save_dir: 生成图片保存的位置
     :type save_dir: str
     """
+
+    print(images)
     
     dashscope.api_key = os.getenv("QWEN_API_KEY")
     dashscope.base_http_api_url = 'https://dashscope.aliyuncs.com/api/v1'
@@ -36,8 +38,8 @@ def create_images(prompt:str,images:list,save_dir:str):
                             n=1,
                             #   size="720*1280",#竖屏 9:16
                             # size="1280*960",#横屏：4:3
-                            #   size="1280*720", #横屏：16:9
-                            size="768*768",
+                            size="1280*720", #横屏：16:9
+                            # size="768*768",
                             prompt_extend=True,
                             watermark=False,
                             seed=12345)

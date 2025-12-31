@@ -10,6 +10,6 @@ image_reader_agent = ReActAgent(
     model=XXzhouModel().get_dashscope_chat_model(model_name="qwen3-vl-plus")
 )
 
-# agent.set_console_output_enabled(False)
+# image_reader_agent.set_console_output_enabled(False)
 
 

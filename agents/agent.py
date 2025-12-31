@@ -38,4 +38,4 @@ agent = ReActAgent(
     model=XXzhouModel().get_dashscope_chat_model()
 )
 
-agent.set_console_output_enabled(False)
+# agent.set_console_output_enabled(False)

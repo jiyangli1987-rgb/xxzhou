@@ -6,3 +6,5 @@ models/
 node_modules/
 notes/
 .obsidian/
+build/
+dist/

@@ -57,6 +57,12 @@ C:\Users\lenovo>xxzhou
 
 然后安装实例的交互方式，就实现可以【下载视频】【生成图片】【识别图片】的功能了。
 
+### 使用pyinstaller打包
+
+``` bash
+pip install pyinstaller
+pyinstaller -F -n xxzhou --exclude-data .env:.env main.py
+```
 
 ## 二、股东群
 
