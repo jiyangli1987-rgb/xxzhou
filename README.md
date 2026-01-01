@@ -59,13 +59,7 @@ C:\Users\lenovo>xxzhou
 
 然后安装实例的交互方式，就实现可以【下载视频】【生成图片】【识别图片】【读取PDF文件】的功能了。
 
-### 使用pyinstaller打包
 
-``` bash
-pip install pyinstaller
-
-pyinstaller --clean xxzhou.spec
-```
 
 ## 二、功能特性
 
@@ -88,6 +82,28 @@ xxzhou 分析这个PDF文件：document.pdf
 xxzhou PDF文件report.pdf中都有哪些章节？
 xxzhou 提取invoice.pdf中的表格数据
 xxzhou 总结research_paper.pdf的主要观点
+```
+
+### 打包成exe文件
+
+``` bash
+pip install pyinstaller
+
+pyinstaller --clean xxzhou.spec
+```
+
+### 发布新版本
+
+``` bash
+ # 提交你的代码更改
+git add .
+git commit -m "Your changes"
+
+# 创建tag (注意格式必须是 v*.*.*)
+git tag v1.0.0
+
+# 推送tag到GitHub
+git push origin v1.0.0
 ```
 
 #### 技术实现

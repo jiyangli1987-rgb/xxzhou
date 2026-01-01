@@ -12,17 +12,6 @@ a = Analysis(
     ],  # 数据文件
     hiddenimports=[
         'agentscope',
-        'agentscope.agent',
-        'agentscope.formatter',
-        'agentscope.memory',
-        'agentscope.tool',
-        'agentscope.tool.write_text_file',
-        'agentscope.tool.view_text_file',
-        'agentscope.tool.insert_text_file',
-        'agentscope.tool.execute_python_code',
-        'agentscope.tool.execute_shell_command',
-        'agentscope.model',
-        'agentscope.message',
         'src.agents.agent',
         'src.agents.image_reader',
         'src.agents.pdf_reader',
