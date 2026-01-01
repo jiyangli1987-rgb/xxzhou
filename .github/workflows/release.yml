@@ -30,6 +30,7 @@ jobs:
 
     - name: Get version from tag
       id: get_version
+      shell: bash
       run: |
         # 从tag中提取版本号（去掉v前缀）
         VERSION=${GITHUB_REF#refs/tags/v}
@@ -38,12 +39,10 @@ jobs:
 
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ steps.get_version.outputs.tag }}
+        tag_name: ${{ steps.get_version.outputs.tag }}
+        name: Release ${{ steps.get_version.outputs.tag }}
         body: |
           ## 自动发布版本 ${{ steps.get_version.outputs.tag }}
 
@@ -66,13 +65,4 @@ jobs:
           - 智能对话助手
         draft: false
         prerelease: false
-
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/xxzhou.exe
-        asset_name: xxzhou.exe
-        asset_content_type: application/octet-stream
+        files: ./dist/xxzhou.exe
