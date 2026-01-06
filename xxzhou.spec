@@ -13,17 +13,38 @@ a = Analysis(
     hiddenimports=[
         'agentscope',
         'src.agents.agent',
+        'src.agents.master_agent',
+        'src.agents.video_agent',
+        'src.agents.image_agent',
+        'src.agents.document_agent',
+        'src.agents.code_agent',
         'src.agents.image_reader',
         'src.agents.pdf_reader',
         'src.llm',
+        'src.agent_factory',
+        'src.agent_communicator',
         'src.tools.download_video',
         'src.tools.create_image',
         'src.tools.image_reader',
         'src.tools.pdf_reader',
+        'src.tools.video_transcriber',
         'dotenv',
         'fitz',  # PyMuPDF
         'PIL',   # pillow
         'cv2',   # opencv-python
+        # openai-whisper 相关依赖
+        'whisper',
+        'torch',
+        'torchvision',
+        'torchaudio',
+        'numpy',
+        'scipy',
+        'tqdm',
+        'more_itertools',
+        'transformers',
+        'tokenizers',
+        'ffmpeg',
+        'openai',
     ],  # 隐藏导入
     hookspath=[],
     hooksconfig={},
